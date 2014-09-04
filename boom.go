@@ -40,8 +40,8 @@ var (
 
 	flagC = flag.Int("c", 50, "")
 	flagN = flag.Int("n", 200, "")
-	flagQ = flag.Int("q", 0, "")
-	flagT = flag.Int("t", 0, "")
+	flagQPS = flag.Int("q", 0, "")
+	flagTimeout = flag.Int("t", 0, "")
 )
 
 var usage = `Usage: boom [options...] <url>
@@ -95,8 +95,8 @@ func main() {
 
 	n := *flagN
 	c := *flagC
-	q := *flagQ
-	t := *flagT
+	q := *flagQPS
+	t := *flagTimeout
 
 	if n <= 0 || c <= 0 {
 		usageAndExit("n and c cannot be smaller than 1.")
